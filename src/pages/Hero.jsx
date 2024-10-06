@@ -1,8 +1,6 @@
-import React from 'react'
 import { ChevronRight, ArrowDown } from 'lucide-react'
-import { Element } from 'react-scroll'
 
-const Hero = ({ scrollToBottom }) => {
+const Hero = ({ scrollToSection }) => {
   return (
       <section className="bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-3xl w-full max-w-6xl h-[80vh] relative overflow-hidden mb-16">
         <div className="absolute left-0 top-0 w-1/2 h-full">
@@ -25,10 +23,14 @@ const Hero = ({ scrollToBottom }) => {
         </div>
         <div className="absolute bottom-0 left-0 md:left-8 text-white flex flex-col items-center bg-blue-600 rounded-t-xl p-2 md:p-4 z-20">
           <span className="text-xs md:text-sm mb-1 md:mb-2">Scroll down</span>
-          <ArrowDown className="h-3 w-3 md:h-4 md:w-4" onClick={scrollToBottom} cursor="pointer" />
+          <ArrowDown 
+          className="h-3 w-3 md:h-4 md:w-4 cursor-pointer" 
+          onClick={() => scrollToSection('about')}
+        />
         </div>
       </section>
   )
 }
+
 
 export default Hero
